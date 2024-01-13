@@ -5,13 +5,11 @@ from models.base import Base
 
 class Rectangle(Base):
     """creating a class rectangle from a base class."""
-    def __init__(self, width, height, x=0, y=0, id=None):
+    def __init__(self, width, height):
         super().__init__(id=None)
          
         self.width = width
         self.height = height
-        self.x = x
-        self.y = y
 
     @property
     def width(self):
@@ -37,29 +35,15 @@ class Rectangle(Base):
             raise ValueError("height must be > 0")
         self.__height = value
 
-    @property
-    def x(self):
-        return self.__x
-
-    @x.setter
-    def x(self, value):
-        if value < 0: #check if x is less than 0
-            raise ValueError("x must be >= 0")
-        self.__x = value
-
-    @property
-    def y(self):
-        return self.__y
-
-    @y.setter
-    def y(self, value):
-        if value < 0: #check if y is less than 0
-            raise ValueError("y must be >= 0")
-        self.__y = value
-
     def area(self):
         """
         implementing a public method area that returns the area of the rectangle.
         """
         area = self.width * self.height
         return area
+    def display(self):
+        """
+        implemnting a public method that print stdout with the character #
+        """
+        for i in range(self.width):
+            print("#" * self.height)
