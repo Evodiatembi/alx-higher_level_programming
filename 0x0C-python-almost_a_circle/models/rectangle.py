@@ -73,8 +73,10 @@ class Rectangle(Base):
         """
         implemnting a public method that print stdout with the character #
         """
+        for i in range(self.x):
+            print()
         for i in range(self.width):
-            print("#" * self.height)
+            print(" " * self.y + "#" * self.height)
 
     def __str__(self):
         """
