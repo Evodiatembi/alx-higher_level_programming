@@ -22,7 +22,7 @@ class Base:
         """
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
-        to_json = json.dumps(list_dictionaries)
+        to_json_string = json.dumps(list_dictionaries)
 
-        return to_json
+        return to_json_string
 
