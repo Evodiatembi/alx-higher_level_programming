@@ -3,6 +3,7 @@
 
 from models.base import Base
 
+
 class Rectangle(Base):
     """creating a class rectangle from a base class."""
     def __init__(self, width, height, x=5, y=5, id=1):
@@ -20,7 +21,7 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
-        if not int: #check if width is not an integer
+        if not int: 
             raise TypeError("width must be integer")
         if value <= 0:
             raise ValueError("width must be > 0")
@@ -32,7 +33,7 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
-        if not int: #check if height is not an integer
+        if not int:
             raise TypeError("height must be integer")
         if value <= 0:
             raise ValueError("height must be > 0")
@@ -64,7 +65,7 @@ class Rectangle(Base):
 
     def area(self):
         """
-        implementing a public method area that returns the area of the rectangle.
+        implementing a public method area of rectangle.
         """
         area = self.width * self.height
         return area
@@ -86,7 +87,7 @@ class Rectangle(Base):
 
     def update(self, *args):
         """
-        assigning arguments to attributes 
+        assigning arguments to attributes.
 
         Args:
             *args (ints): New attribute values.
